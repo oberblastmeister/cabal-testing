@@ -1,0 +1,17 @@
+cabal-version: 3.8
+name: cabal-testing
+version: 0.1.0.0
+
+library
+  hs-source-dirs: ./
+                hlex exposed-modules: Lib
+  build-depends: base
+
+common common-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+
+test-suite tests
+  import: common-test
+  hs-source-dirs: ./
+  build-depends: cabal-testing
